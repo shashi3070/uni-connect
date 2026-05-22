@@ -1,0 +1,136 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uni-connect"
+version = "0.1.0"
+description = "Universal connection manager — one API for storage, databases, ETL, CRM, AI/LLM, messaging, cloud, and more."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "uni-connect contributors"}
+]
+requires-python = ">=3.10"
+keywords = [
+    "connection", "connector", "s3", "sftp", "ftp", "database",
+    "redshift", "snowflake", "bigquery", "postgresql", "mysql",
+    "sqlserver", "mongodb", "redis", "salesforce", "matillion",
+    "llm", "openai", "anthropic", "email", "etl", "cloud"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Database :: Front-Ends",
+]
+
+dependencies = [
+    "pydantic>=2.0",
+]
+
+[optional-dependencies]
+all = [
+    "boto3", "s3fs", "google-cloud-storage", "azure-storage-blob",
+    "paramiko", "pysftp", "asyncssh",
+    "psycopg2-binary", "asyncpg", "mysql-connector-python", "pymysql",
+    "pyodbc", "pymssql", "redis", "pymongo", "motor",
+    "redshift-connector", "snowflake-connector-python", "google-cloud-bigquery",
+    "simple-salesforce", "openai", "anthropic", "google-genai",
+    "boto3", "slack-sdk", "sendgrid",
+]
+
+s3 = ["boto3", "s3fs"]
+gcs = ["google-cloud-storage"]
+azure = ["azure-storage-blob"]
+ftp = []
+sftp = ["paramiko", "pysftp", "asyncssh"]
+local = []
+
+postgres = ["psycopg2-binary", "asyncpg"]
+mysql = ["mysql-connector-python", "pymysql"]
+sqlserver = ["pyodbc", "pymssql"]
+sqlite = []
+oracle = ["cx-oracle", "python-oracledb"]
+mariadb = ["mariadb"]
+mongodb = ["pymongo", "motor"]
+redis = ["redis"]
+dynamodb = ["boto3"]
+cassandra = ["cassandra-driver"]
+neo4j = ["neo4j"]
+couchbase = ["couchbase"]
+couchdb = ["couchdb"]
+influxdb = ["influxdb-client"]
+clickhouse = ["clickhouse-connect"]
+duckdb = ["duckdb"]
+elasticsearch = ["elasticsearch"]
+ibm_db2 = ["ibm_db"]
+sap_hana = ["hdbcli"]
+
+redshift = ["redshift-connector", "psycopg2-binary"]
+snowflake = ["snowflake-connector-python"]
+bigquery = ["google-cloud-bigquery"]
+databricks = ["databricks-sql-connector", "databricks-sdk"]
+athena = ["boto3", "PyAthena"]
+presto = ["presto-python-client", "trino"]
+
+openai = ["openai"]
+anthropic = ["anthropic"]
+google_ai = ["google-genai"]
+ollama = []
+bedrock = ["boto3"]
+groq = ["groq"]
+deepseek = ["openai"]
+mistral = ["mistralai"]
+cohere = ["cohere"]
+huggingface = ["huggingface-hub"]
+replicate = ["replicate"]
+
+salesforce = ["simple-salesforce", "PySFDC"]
+hubspot = ["hubspot-api-client"]
+zoho = []
+servicenow = ["pysnow"]
+
+email = []
+slack = ["slack-sdk"]
+teams = ["pymsteams"]
+discord = ["discord.py"]
+telegram = ["python-telegram-bot"]
+twilio = ["twilio"]
+sendgrid = ["sendgrid"]
+mailgun = []
+mailchimp = ["mailchimp-marketing"]
+
+kafka = ["confluent-kafka", "aiokafka"]
+rabbitmq = ["pika", "aio-pika"]
+nats = ["nats-py"]
+
+stripe = ["stripe"]
+
+github = ["PyGithub"]
+gitlab = ["python-gitlab"]
+jira = ["atlassian-python-api"]
+
+kubernetes = ["kubernetes"]
+docker = ["docker"]
+
+dbt = []
+airbyte = ["airbyte-api"]
+fivetran = []
+matillion = []
+nifi = []
+informatica = []
+
+[project.urls]
+Homepage = "https://github.com/anomalyco/uni-connect"
+Repository = "https://github.com/anomalyco/uni-connect"
+Issues = "https://github.com/anomalyco/uni-connect/issues"
+
+[tool.setuptools.packages.find]
+include = ["uniconnect*"]
