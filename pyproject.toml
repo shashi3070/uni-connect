@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "uni-connect"
-version = "0.1.0"
+version = "0.1.1"
 description = "Universal connection manager — one API for storage, databases, ETL, CRM, AI/LLM, messaging, cloud, and more."
 readme = "README.md"
-license = {text = "MIT"}
+license-files = ["LICENSE"]
 authors = [
-    {name = "uni-connect contributors"}
+    {name = "Shashi Kundan", email = "shashikundan0001@gmail.com"}
 ]
 requires-python = ">=3.10"
 keywords = [
@@ -35,7 +35,7 @@ dependencies = [
     "pydantic>=2.0",
 ]
 
-[optional-dependencies]
+[project.optional-dependencies]
 all = [
     "boto3", "s3fs", "google-cloud-storage", "azure-storage-blob",
     "paramiko", "pysftp", "asyncssh",
@@ -134,3 +134,4 @@ Issues = "https://github.com/anomalyco/uni-connect/issues"
 
 [tool.setuptools.packages.find]
 include = ["uniconnect*"]
+where = ["."]
